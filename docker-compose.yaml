@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  e2e:
+    image: "cypress/included:10.8.0"
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e
+    entrypoint: cypress run
+
+  component:
+    image: "cypress/included:10.8.0"
+    working_dir: /component
+    volumes:
+      - ./:/component
+    entrypoint: cypress run --component
