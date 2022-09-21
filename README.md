@@ -4,6 +4,7 @@ In this repository I want to test, how to integrate the Cypress test framework w
 ## Cypres in Container
 As for the container I will use the latest [version](https://github.com/cypress-io/cypress-docker-images/tree/master/included/10.8.0).
 
+### 1. Test with Docker
 1. Check the info of the container by running the command \
 ```$ docker run -it --entrypoint=cypress cypress/included:10.8.0 info ```\
 in order to check the version of Cypress, the system platform, memory as well as the list of preinstalled Browsers.
@@ -13,7 +14,12 @@ in order to check the version of Cypress, the system platform, memory as well as
 3. Run Tests with Cypress-Container: \
 3.1. e2e-Tests:  ``` $ docker run -it -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:10.8.0 run``` \
 3.2. Component-Tests: ``` $ docker run -it -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:10.8.0 run --component``` 
+### 2. Test with Docker-Compose
+With the help of the docker-compose.yaml file we can shorten the commands to:
+1. e2e-Tests: ```$ docker-compose up e2e```
+2. Component-Tests: ```$ docker-compose up component```
 
+##  
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
